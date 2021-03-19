@@ -8,7 +8,7 @@ class Movies extends Component{
       return (
         <div>
      		{movies.map(movie => {
-            const profiles = this.props.profiles.filter(profile => profile.favoriteMovieID == movie.id);
+            const profiles = this.props.profiles.filter(profile => parseInt(profile.favoriteMovieID,10) === movie.id);
             const text = profiles.length > 0 ? 'Liked by' : 'None of the current users liked this movie';
             return ( 
                     <div key={movie.id}>
